@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using Wbooru.PluginExt;
 
 namespace WbooruPlugin.WindowsStyleCustomizer
 {
+    [Export(typeof(PluginInfo))]
     public class WindowsStyleCustomizerPluginInfo : PluginInfo
     {
         public override string PluginName => "Windows Style Customizer";
