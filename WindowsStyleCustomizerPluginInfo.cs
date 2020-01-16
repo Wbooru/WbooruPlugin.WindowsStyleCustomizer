@@ -21,7 +21,7 @@ namespace WbooruPlugin.WindowsStyleCustomizer
 
         public override string PluginDescription => "能够提供将图片设置成桌面壁纸或者锁屏壁纸的功能";
 
-        public Version CurrentPluginVersion => throw new NotImplementedException();
+        public Version CurrentPluginVersion => GetType().Assembly.GetName().Version;
 
         public IEnumerable<ReleaseInfo> GetReleaseInfoList()
         {
