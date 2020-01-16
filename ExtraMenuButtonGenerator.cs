@@ -29,12 +29,12 @@ namespace WbooruPlugin.WindowsStyleCustomizer
             {
                 Header = "设置为桌面壁纸"
             };
-            button.Click += SetDeskopBackground;
+            button.Click += SetDesktopBackground;
 
             return button;
         }
 
-        private async void SetDeskopBackground(object sender, RoutedEventArgs e)
+        private async void SetDesktopBackground(object sender, RoutedEventArgs e)
         {
             var picture_page = (sender as FrameworkElement)?.DataContext as PictureDetailViewPage;
 
