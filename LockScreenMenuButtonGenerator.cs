@@ -49,10 +49,9 @@ namespace WbooruPlugin.WindowsStyleCustomizer
                 return;
             }
 
-            string path = string.Empty;
-
             try
             {
+
                 using (MemoryStream ms = new MemoryStream())
                 {
                     BitmapEncoder encoder = new BmpBitmapEncoder();
@@ -62,13 +61,16 @@ namespace WbooruPlugin.WindowsStyleCustomizer
                     /*
                     using (var bitmap = new Bitmap(System.Drawing.Image.FromStream(ms)))
                     {
-                        path = Path.GetTempFileName();
+                        var path = Path.GetTempFileName();
                         bitmap.Save(path);
+
+                        var file = await StorageFile.GetFileFromPathAsync(path);
+                        await UserProfilePersonalizationSettings.Current.TrySetLockScreenImageAsync(file);
                     }
-                    
-                    var file = await StorageFile.GetFileFromPathAsync(path);
                     */
+
                     await LockScreen.SetImageStreamAsync(ms.AsRandomAccessStream());
+
                     Toast.ShowMessage("设置成功");
                 }
             }
