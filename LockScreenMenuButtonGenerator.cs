@@ -12,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Wbooru.UI.Controls;
 using Wbooru.UI.Controls.PluginExtension;
+using Wbooru.UI.Dialogs;
 using Wbooru.UI.Pages;
 using Wbooru.Utils;
 using Windows.Storage;
@@ -48,6 +49,9 @@ namespace WbooruPlugin.WindowsStyleCustomizer
                 Toast.ShowMessage($"无法从ImageViewer控件提取图片");
                 return;
             }
+
+            if (!await Dialog.ShowDialog("是否将此图片设置成锁屏壁纸?"))
+                return;
 
             try
             {
