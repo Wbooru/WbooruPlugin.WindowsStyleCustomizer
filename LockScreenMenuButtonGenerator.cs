@@ -50,7 +50,7 @@ namespace WbooruPlugin.WindowsStyleCustomizer
                 return;
             }
 
-            if (!await Dialog.ShowDialog("是否将此图片设置成锁屏壁纸?"))
+            if (!await Dialog.ShowComfirmDialog("是否将此图片设置成锁屏壁纸?"))
                 return;
 
             try
