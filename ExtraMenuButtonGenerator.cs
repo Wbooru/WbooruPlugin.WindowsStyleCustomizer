@@ -36,9 +36,9 @@ namespace WbooruPlugin.WindowsStyleCustomizer
 
         private async void SetDesktopBackground(object sender, RoutedEventArgs e)
         {
-            var picture_page = (sender as FrameworkElement)?.DataContext as PictureDetailViewPage;
+            var picture_page = (sender as FrameworkElement)?.DataContext as FrameworkElement;
 
-            if (!(ViusalTreeHelperEx.Find(a=>a is ImageViewer,picture_page) is ImageViewer viewer))
+            if (!(VisualTreeHelperEx.Find(a => a is ImageViewer, picture_page) is ImageViewer viewer))
             {
                 Toast.ShowMessage($"找不到依赖的ImageViewer控件");
                 return;
